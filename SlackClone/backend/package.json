@@ -1,0 +1,20 @@
+{
+  "name": "slack-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/dustinburda/SlackClone#readme",
+  "bugs": {
+    "url": "https://github.com/dustinburda/SlackClone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinburda/SlackClone.git"
+  },
+  "license": "ISC",
+  "author": "Dustin Burda",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
