@@ -11,11 +11,11 @@ app.use(express.static('../frontend'))
 app.get('/', (req, res) => {
     res.set({
         "content-type": "text/plain"
-    })
-    res.send("<h1> Hello World! </h1>")
+    });
+    res.send("<h1> Hello World! </h1>");
 })
 
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
+    console.log(`Listening on port ${PORT}`);
 })
