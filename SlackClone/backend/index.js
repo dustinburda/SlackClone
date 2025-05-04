@@ -25,10 +25,10 @@ app.post('/api/login/', (req, res) => {
     
     const {username, password} = req.body;
 
-    
-
-    console.log(username, password)
-    res.status(500).send("Logging In...")
+    if (username in credentials && credentials[username] == password) 
+        res.status(200).send("Successfully logged in!");
+    else 
+        res.status(404).send("Failed to log in!")
 })
 
 app.listen(PORT, () => {
