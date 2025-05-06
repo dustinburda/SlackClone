@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,15 +27,34 @@
                     <div class="login-card-title">Sign in to your workspace</div>
                     <div class="login-card-subtitle">Enter your username and password</div>
                     
-                    <div class="input-wrapper">
-                        <input type="text" id="username" class="login-input" placeholder="Username" />
-                        <input type="password" id="password" class="login-input" placeholder="Password" />
+                    <div class="login-input-wrapper">
+                        <input type="text" id="login-username" class="login-input" placeholder="Username" />
+                        <input type="password" id="login-password" class="login-input" placeholder="Password" />
                     </div>
                     
                     <button class="login-button">Sign In</button>
                 </div>
             </div>
             <div class="signup-div">Don't have an account? <a class="signup-link">Sign up!</a></div>
+        </div>
+    </div>
+
+    <div class="signup-page hidden">
+        <div class="signup-page-content">
+            <div class="signup-card">
+                <div class="signup-card-content">
+                    <div class="signup-card-title">Sign up for threadly</div>
+                    
+                    <div class="signup-input-wrapper">
+                        <input type="text" id="signup-username" class="signin-input" placeholder="Username" />
+                        <input type="password" id="signup-password" class="signin-input" placeholder="Password" />
+                        <input type="password" id="signup-confirm-password" class="signin-input" placeholder="Confirm Password" />
+                    </div>
+
+                    <button class="signup-button">Sign Up</button>
+                </div>
+            </div>
+            <div class="signin-div">Have an account? <a class="signin-link">Sign in!</a></div>
         </div>
     </div>
 
