@@ -4,7 +4,22 @@ import { setActivePage } from "./globals.js";
 
 
 function signUpError(errorMessage) {
+    let signupSubtitle = document.querySelector('.signup-card-subtitle');
 
+    signupSubtitle.textContent = errorMessage;
+    signupSubtitle.style.color = "red";
+
+    setTimeout(() => {
+        signupSubtitle.textContent = "Enter a username and password";
+        signupSubtitle.style.color = "#9e9e9e";
+    }, 3000)
+}
+
+function signUpSuccess() {
+    let signupSubtitle = document.querySelector('.signup-card-subtitle');
+
+    signupSubtitle.textContent = "You're all set!";
+    signupSubtitle.style.color = "green";
 }
 
 async function signUp() {
@@ -18,6 +33,7 @@ async function signUp() {
     }
 
     try {
+        console.log("Hello......")
         const response = await fetch(signupUrl, {   
             method: "POST",
             headers: {
@@ -29,11 +45,16 @@ async function signUp() {
             })
         })  
 
-        if(response.status = 404) {
-            signUpError();
-        } else if (responses.status == 200) {
-            // Maybe change the subtitle here?
-            setActivePage("login");
+        console.log(response.status)
+
+        if(response.status === 404) {
+            signUpError("Failed to create a user account!");
+        } else if (response.status === 201) {
+            signUpSuccess();
+            setTimeout(() => {
+                setActivePage("login");
+            }, 1500)
+            
         }
     } 
     catch (e) {
@@ -41,8 +62,9 @@ async function signUp() {
     }
 }
 
-function loginRedirectHandler {
-
+function loginRedirectHandler() {
+    window.console.log("Hello!!!");
+    setActivePage("login");
 }
 
 export {signUp, loginRedirectHandler};

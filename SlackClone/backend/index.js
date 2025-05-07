@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express');
 const cors = require("cors")
+const bycrypt = require("bcrypt")
 
 const app = express();
 app.use(express.static('../frontend'))
@@ -11,7 +12,6 @@ app.use(cors())
 const PORT = process.env.PORT || 3000;
 
 const credentials = {
-    "dustin": "1234"
 };
 
 app.get('/', (req, res) => {
@@ -21,23 +21,42 @@ app.get('/', (req, res) => {
     res.send("<h1> Hello World! </h1>");
 })
 
-app.post('/api/signup', (req, res) => {
+app.post('/api/signup/', async (req, res) => {
     const {username, password} = req.body;
 
-    
+    try {
+        const salt = await bycrypt.genSalt();
+        const hashedPassword = await bycrypt.hash(password, salt);
 
+        credentials[username] = hashedPassword;
+        res.status(201).send();
 
+    } catch (e) {
+        res.status(500).send();
+    }
 })
 
-app.post('/api/login/', (req, res) => {
+app.post('/api/login/', async (req, res) => {
     
     const {username, password} = req.body;
 
-    if (username in credentials && credentials[username] == password) 
-        res.status(200).send("Successfully logged in!");
-    else 
-        res.status(404).send("Failed to log in!")
+    try {
+        if (!(username in credentials))
+            res.status(404).send();
+
+        validPassword = await bycrypt.compare(password, credentials[username]);
+
+        if (validPassword)
+            res.status(200).send();
+        else
+            res.status(404).send();
+
+    } catch (e) {
+        res.status(500).send();
+    }
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
