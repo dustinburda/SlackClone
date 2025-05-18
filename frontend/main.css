@@ -1,16 +1,117 @@
-.page-content {
+.main-page-content {
     display: flex;
 
     height: 100vh;
     width: 100vw;
+
+    font-family: "Lato";
 }
 
 #sidebar {
-    flex: 1.8 1.8 0;
+    flex: 1.5 1.5 0;
     background-color: rgb(74, 21, 75);
 }
 
 #chat-section {
-    flex: 8.2 8.2 0;
+    flex: 8.5 8.5 0;
     background-color: white;
+}
+
+.chat-header {
+    height: 60px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 10px;
+}
+
+.chat-reciever {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+    &::before {
+        content: "C";
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+        margin-right: 8px;
+
+        background-color: rgb(114, 61, 115);
+    }
+}
+
+.chat-input-wrapper {
+    border-top: 1px solid #dedede;
+    
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+.chat-input-container {
+    width: 100%;
+
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-bottom: 5px;
+}
+
+.chat-input-title {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#chat-input {
+    height: 100px;
+    width: 80%;
+    rows: 5;
+    
+    padding: 10px 20px;
+    border: 1px solid #aeaeae;
+    border-radius: 10px;
+
+    margin-bottom: 2px;
+
+    font-size: 20px;
+
+    resize: none;
+}
+
+#send-message-button {
+    font-size: 20px;
+    
+    padding: 5px 20px;
+
+    width: 140px;
+
+    border-radius: 25px;
+    border: none;
+    
+    display: block;
+
+    background-color: rgb(144, 91, 145);
+
+    &:hover {
+        background-color: rgb(154, 101, 155);
+    }
+
+    &:active {
+         background-color: rgb(164, 111, 165);
+    }
 }

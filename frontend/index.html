@@ -18,39 +18,55 @@
   </head>
   <body>
     <div class="main-page hidden">
-      <div class="page-content">
+      <div class="main-page-content">
+       
         <div id="sidebar">
           <div class="user-info">
             <div class="username">dustinburda</div>
             <div class="online-status">online</div>
           </div>
+
           <div class="channels">
             <div class="section-title">Channel</div>
+            
             <ul class="channel-names">
               <li>#general</li>
               <li>#random</li>
               <li>#update</li>
             </ul>
+          
           </div>
+
           <div class="direct-messages">
             <div class="section-title">Direct Messages</div>
+        
             <ul class="user-names">
               <li>Eric</li>
               <li>Cory</li>
               <li>David</li>
+        
             </ul>
           </div>
         </div>
+
         <div id="chat-section">
-          <div class="username-sender">David</div>
-          <div class="chat-content">
-              <div class="message"> Hello there! </div>
-              <div class="message"> Why hello! </div>
-              <div class="message"> What's the weather like? </div>
-              <div class="message"> Great </div>
+        
+          <div class="chat-header">
+            <div class="chat-reciever"> Cory </div>
           </div>
-          <div class="chat-input">
-            <input type="text" placeholder="Hit enter to send a message.">
+
+          <div class="chat-content-wrapper">
+            <div class="chat-content">
+              
+            </div>
+          </div>
+
+          <div class="chat-input-wrapper">
+            <div class="chat-input-container">
+              <div class="chat-input-title">Send a message</div>
+              <textarea id="chat-input" placeholder="Jot something down"></textarea>
+              <button id="send-message-button">Send</button>
+            </div>
           </div>
         </div>
       </div>
