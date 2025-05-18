@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +17,43 @@
     />
   </head>
   <body>
-    <div class="welcome-page hidden">
-      <h1>Hello World!</h1>
+    <div class="main-page hidden">
+      <div class="page-content">
+        <div id="sidebar">
+          <div class="user-info">
+            <div class="username">dustinburda</div>
+            <div class="online-status">online</div>
+          </div>
+          <div class="channels">
+            <div class="section-title">Channel</div>
+            <ul class="channel-names">
+              <li>#general</li>
+              <li>#random</li>
+              <li>#update</li>
+            </ul>
+          </div>
+          <div class="direct-messages">
+            <div class="section-title">Direct Messages</div>
+            <ul class="user-names">
+              <li>Eric</li>
+              <li>Cory</li>
+              <li>David</li>
+            </ul>
+          </div>
+        </div>
+        <div id="chat-section">
+          <div class="username-sender">David</div>
+          <div class="chat-content">
+              <div class="message"> Hello there! </div>
+              <div class="message"> Why hello! </div>
+              <div class="message"> What's the weather like? </div>
+              <div class="message"> Great </div>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Hit enter to send a message.">
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="login-page hidden">

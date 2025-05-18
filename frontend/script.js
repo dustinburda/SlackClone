@@ -2,7 +2,7 @@ import { login, signupRedirectHandler } from "./login.js";
 import { signUp,loginRedirectHandler } from "./signup.js";
 import { setActivePage } from "./globals.js";
 
-setActivePage("login");
+setActivePage("main");
 
 let loginButton = document.querySelector(".login-button");
 loginButton.addEventListener("click", login);

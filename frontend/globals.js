@@ -1,11 +1,11 @@
 let loginPage = document.querySelector(".login-page");
 let signupPage = document.querySelector(".signup-page");
-let welcomePage = document.querySelector(".welcome-page");
+let mainPage = document.querySelector(".main-page");
 
 const pages =  { 
     "login": loginPage, 
     "signup": signupPage, 
-    "welcome": welcomePage
+    "main": mainPage
 }
 
 function setActivePage( pageToActivate ) {
