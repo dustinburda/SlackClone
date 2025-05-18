@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="welcome-page hidden">
+      <h1>Hello World!</h1>
+    </div>
+    
+    <div class="login-page hidden">
+        <div class="login-page-content">
+            <div class="login-card">
+                <div class="login-card-content">
+                    <div class="login-card-title">Sign in to your workspace</div>
+                    <div class="login-card-subtitle">Enter your username and password</div>
+                    
+                    <div class="login-input-wrapper">
+                        <input type="text" id="login-username" class="login-input" placeholder="Username" />
+                        <input type="password" id="login-password" class="login-input" placeholder="Password" />
+                    </div>
+                    
+                    <button class="login-button">Sign In</button>
+                </div>
+            </div>
+            <div class="signup-div">Don't have an account? <a class="signup-link">Sign up!</a></div>
+        </div>
+    </div>
+
+    <div class="signup-page hidden">
+        <div class="signup-page-content">
+            <div class="signup-card">
+                <div class="signup-card-content">
+                    <div class="signup-card-title">Sign up for threadly</div>
+                    <div class="signup-card-subtitle">Enter a username and password</div>
+
+                    <div class="signup-input-wrapper">
+                        <input type="text" id="signup-username" class="signup-input" placeholder="Username" />
+                        <input type="password" id="signup-password" class="signup-input" placeholder="Password" />
+                        <input type="password" id="signup-confirm-password" class="signup-input" placeholder="Confirm Password" />
+                    </div>
+
+                    <button class="signup-button">Sign Up</button>
+                </div>
+            </div>
+            <div class="signin-div">Have an account? <a class="signin-link">Sign in!</a></div>
+        </div>
+    </div>
+
+
+    <script src="script.js" type="module"></script>
+    <script src="env.js" type="module"></script>
+    <script src="login.js" type="module"></script>
+    <script src="signup.js" type="module"></script>
+  </body>
+</html>

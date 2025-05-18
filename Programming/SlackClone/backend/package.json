@@ -1,0 +1,30 @@
+{
+  "name": "slack-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/dustinburda/SlackClone#readme",
+  "bugs": {
+    "url": "https://github.com/dustinburda/SlackClone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinburda/SlackClone.git"
+  },
+  "license": "ISC",
+  "author": "Dustin Burda",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
