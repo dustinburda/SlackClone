@@ -7,13 +7,8 @@
     font-family: "Lato";
 }
 
-#sidebar {
-    flex: 1.5 1.5 0;
-    background-color: rgb(74, 21, 75);
-}
-
 #chat-section {
-    flex: 8.5 8.5 0;
+    flex: 8.8 8.8 0;
     background-color: white;
 }
 

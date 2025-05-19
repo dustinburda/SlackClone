@@ -33,7 +33,7 @@ async function login() {
         if (response.status == 404) {
             loginError()
         } else if (response.status == 200) {
-            setActivePage("welcome");
+            setActivePage("main");
         }
     } 
     catch (e) {

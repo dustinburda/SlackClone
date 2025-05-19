@@ -1,4 +1,3 @@
 Hook up mongodb
     Add users
-Finish message divs
-Finish sidebar
+Clear inputs when refreshing
