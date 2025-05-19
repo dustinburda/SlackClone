@@ -1,0 +1,4 @@
+Hook up mongodb
+    Add users
+Finish message divs
+Finish sidebar
