@@ -21,7 +21,7 @@ const credentials = {
 
 
 
-posts = [
+let posts = [
     {
         username: "Jim",
         title: "post1"
@@ -31,6 +31,30 @@ posts = [
         title: "post2"
     }
 ]
+
+let refreshTokens  = []
+const REFRESH_TIME = '25s'
+
+app.get('/token', (req, res) => {
+    const refreshToken = req.body.token;
+    if (refreshTokens == null)
+        return res.status(401).send("No token provided");
+
+    if (refreshTokens.indexOf(refreshToken) === -1)
+        return res.status(403).send("Invalid refresh token");
+
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+        if (err)
+            return res.status(403).send(err);
+
+        const accessToken = jwt.sign( { name: user.name }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: REFRESH_TIME});
+        res.status(200).send(JSON.stringify({
+            accessToken: accessToken,
+        }));
+    })
+
+
+})
 
 app.get('/posts', authenticateToken, (req, res) => {
     res.set({
@@ -78,8 +102,13 @@ app.post('/api/login/', async (req, res) => {
 
         if (validPassword) {
             const user = { name: username };
-            const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-            return res.status(200).send(JSON.stringify(accessToken));
+            const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: REFRESH_TIME});
+            const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET);
+            refreshTokens.push(refreshToken);
+            return res.status(200).send(JSON.stringify( {
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            }));
         }
         else
             return res.status(404).send();
@@ -89,10 +118,11 @@ app.post('/api/login/', async (req, res) => {
     }
 })
 
-app.post('/api/logout', async (req, res) => {
-    const {username} = req.body;
+app.delete('/api/logout', async (req, res) => {
+    refreshTokens = refreshTokens.filter( token => token !== req.body.token)
+    res.status(204).send("Successfully logged out!");
 
-    
+
 })
 
 
